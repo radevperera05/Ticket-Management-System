@@ -1,17 +1,16 @@
 package org.example.ticketing;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Vendor implements Runnable {
     private final TicketPool ticketPool;
-    private final int ticketsPerRelease;
+    private final int vendorId;
     private final int releaseInterval;
-    private static int ticketCounter = 0; // Shared ticket counter across all vendors
+    private static int ticketCounter = 0;
 
-    public Vendor(TicketPool ticketPool, int ticketsPerRelease, int releaseInterval) {
+    public Vendor(TicketPool ticketPool, int vendorId, int releaseInterval) {
         this.ticketPool = ticketPool;
-        this.ticketsPerRelease = ticketsPerRelease;
+        this.vendorId = vendorId;
         this.releaseInterval = releaseInterval;
     }
 
@@ -21,30 +20,24 @@ public class Vendor implements Runnable {
             while (true) {
                 synchronized (ticketPool) {
                     if (ticketPool.allTicketsSold()) {
-                        System.out.println("All tickets are sold. Vendor is stopping.");
+                        Logger.log("All tickets are sold. Vendor " + vendorId + " is stopping.");
                         break;
                     }
 
-                    int ticketsToAdd = Math.min(ticketsPerRelease, ticketPool.getRemainingTicketsToRelease());
-
-                    // Check if there's enough space in the pool
-                    if (ticketPool.canAddTickets(ticketsToAdd)) {
-                        List<String> newTickets = new ArrayList<>();
-                        for (int i = 0; i < ticketsToAdd; i++) {
-                            ticketCounter++;
-                            newTickets.add(String.format("ID: %03d", ticketCounter)); // Format ticket number
-                        }
-                        ticketPool.addTickets(newTickets);
-                        ticketPool.decrementTotalTickets(ticketsToAdd);
-                        System.out.println("Vendor added " + ticketsToAdd + " tickets.");
+                    if (ticketPool.canAddTickets(1) && ticketPool.getRemainingTicketsToRelease() > 0) {
+                        ticketCounter++;
+                        String ticket = String.format("ID: %03d", ticketCounter);
+                        ticketPool.addTickets(List.of(ticket));
+                        ticketPool.decrementTotalTickets(1);
+                        Logger.log("Vendor " + vendorId + " released ticket: " + ticket);
                     } else {
-                        System.out.println("Vendor waiting, ticket pool at capacity.");
+                        Logger.log("Vendor " + vendorId + " waiting, ticket pool at capacity.");
                     }
                 }
-                Thread.sleep(releaseInterval);
+                Thread.sleep(releaseInterval * 1000L);
             }
         } catch (InterruptedException e) {
-            System.out.println("Vendor interrupted.");
+            Logger.log("Vendor " + vendorId + " interrupted.");
         }
     }
 }

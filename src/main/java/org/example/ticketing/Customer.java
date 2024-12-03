@@ -3,33 +3,36 @@ package org.example.ticketing;
 public class Customer implements Runnable {
     private final TicketPool ticketPool;
     private final int retrievalInterval;
+    private final int customerId;
 
-    public Customer(TicketPool ticketPool, int retrievalInterval) {
+    public Customer(TicketPool ticketPool, int retrievalInterval, int customerId) {
         this.ticketPool = ticketPool;
         this.retrievalInterval = retrievalInterval;
+        this.customerId = customerId;
     }
 
     @Override
     public void run() {
         try {
-            while (true) {
-                synchronized (ticketPool) {
-                    if (ticketPool.allTicketsSold()) {
-                        System.out.println("No tickets left to purchase. Customer is stopping.");
+            synchronized (ticketPool) {
+                while (true) {
+                    if (ticketPool.allTicketsSold() && ticketPool.getRemainingTicketsToRelease() == 0) {
+                        Logger.log("No tickets left to purchase. Customer " + customerId + " is stopping. \n");
                         break;
                     }
 
                     String ticket = ticketPool.removeTicket();
                     if (ticket != null) {
-                        System.out.println("Customer purchased: " + ticket);
+                        Logger.log("Customer " + customerId + " purchased ticket: " + ticket + "\n");
+                        break;
                     } else {
-                        System.out.println("No tickets available in the pool.");
+                        Logger.log("Customer " + customerId + " is waiting for a ticket... \n");
                     }
                 }
-                Thread.sleep(retrievalInterval);
             }
+            Thread.sleep(retrievalInterval * 1000L);
         } catch (InterruptedException e) {
-            System.out.println("Customer interrupted.");
+            Logger.log("Customer " + customerId + " interrupted.");
         }
     }
 }

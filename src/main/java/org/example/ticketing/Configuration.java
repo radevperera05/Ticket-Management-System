@@ -5,6 +5,8 @@ public class Configuration {
     private int ticketReleaseRate;
     private int customerRetrievalRate;
     private int maxTicketCapacity;
+    private int numberOfVendors;
+    private int numberOfCustomers; // New field for customers
 
     // Getters and Setters
     public int getTotalTickets() {
@@ -37,5 +39,21 @@ public class Configuration {
 
     public void setMaxTicketCapacity(int maxTicketCapacity) {
         this.maxTicketCapacity = maxTicketCapacity;
+    }
+
+    public int getNumberOfVendors() {
+        return numberOfVendors;
+    }
+
+    public void setNumberOfVendors(int numberOfVendors) {
+        this.numberOfVendors = numberOfVendors;
+    }
+
+    public int getNumberOfCustomers() {
+        return numberOfCustomers;
+    }
+
+    public void setNumberOfCustomers(int numberOfCustomers) {
+        this.numberOfCustomers = numberOfCustomers;
     }
 }

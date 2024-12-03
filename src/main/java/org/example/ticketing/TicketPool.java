@@ -6,28 +6,41 @@ import java.util.List;
 
 public class TicketPool {
     private final List<String> tickets = Collections.synchronizedList(new LinkedList<>());
-    private int totalTickets; // Total tickets available to release
-    private int maxCapacity;  // Maximum ticket pool capacity
+    private int totalTickets;
+    private final int maxCapacity;
 
-    public TicketPool(int totalTickets) {
+    public TicketPool(int totalTickets, int maxCapacity) {
         this.totalTickets = totalTickets;
         this.maxCapacity = maxCapacity;
     }
 
     public synchronized void addTickets(List<String> newTickets) {
+        while (tickets.size() >= maxCapacity) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
         tickets.addAll(newTickets);
-        System.out.println("Tickets added: " + newTickets.size() + " | Total in pool: " + tickets.size());
+        Logger.log("Tickets added: " + newTickets.size() + " | Total in pool: " + tickets.size());
+        notifyAll();
     }
 
     public synchronized String removeTicket() {
+        while (tickets.isEmpty() && totalTickets > 0) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
         if (!tickets.isEmpty()) {
-            return tickets.remove(0);
+            String ticket = tickets.remove(0);
+            notifyAll();
+            return ticket;
         }
         return null;
-    }
-
-    public synchronized int getRemainingTicketsInPool() {
-        return tickets.size();
     }
 
     public synchronized int getRemainingTicketsToRelease() {
