@@ -14,6 +14,6 @@ public class Logger {
         } catch (IOException e) {
             System.err.println("Failed to write to log file: " + e.getMessage());
         }
-        System.out.println(message); // Optionally, print to console as well
+        System.out.println(message); // Optional: Print to console
     }
 }

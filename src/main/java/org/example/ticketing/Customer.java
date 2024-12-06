@@ -2,12 +2,10 @@ package org.example.ticketing;
 
 public class Customer implements Runnable {
     private final TicketPool ticketPool;
-    private final int retrievalInterval;
     private final int customerId;
 
-    public Customer(TicketPool ticketPool, int retrievalInterval, int customerId) {
+    public Customer(TicketPool ticketPool, int customerId) {
         this.ticketPool = ticketPool;
-        this.retrievalInterval = retrievalInterval;
         this.customerId = customerId;
     }
 
@@ -16,23 +14,23 @@ public class Customer implements Runnable {
         try {
             synchronized (ticketPool) {
                 while (true) {
-                    if (ticketPool.allTicketsSold() && ticketPool.getRemainingTicketsToRelease() == 0) {
-                        Logger.log("No tickets left to purchase. Customer " + customerId + " is stopping. \n");
+                    if (ticketPool.allTicketsSold()) {
+                        Logger.log("No tickets left to purchase. Customer-" + customerId + " is stopping.");
                         break;
                     }
 
-                    String ticket = ticketPool.removeTicket();
+                    String ticket = ticketPool.removeTicket(String.valueOf(customerId));
                     if (ticket != null) {
-                        Logger.log("Customer " + customerId + " purchased ticket: " + ticket + "\n");
-                        break;
+                        Logger.log("Customer-" + customerId + " purchased: " + ticket);
+                        break; // Exit after successful purchase
                     } else {
-                        Logger.log("Customer " + customerId + " is waiting for a ticket... \n");
+                        Logger.log("Customer-" + customerId + " is waiting: Ticket pool is empty...");
                     }
                 }
             }
-            Thread.sleep(retrievalInterval * 1000L);
+            Thread.sleep(1000L); // Simulate customer retrieval interval
         } catch (InterruptedException e) {
-            Logger.log("Customer " + customerId + " interrupted.");
+            Logger.log("Customer-" + customerId + " interrupted.");
         }
     }
 }

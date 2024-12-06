@@ -14,6 +14,9 @@ import java.util.Scanner;
 @SpringBootApplication
 public class TicketingApplication {
 
+    private static final List<String> customerPurchases = new ArrayList<>();
+    private static final List<String> vendorReleases = new ArrayList<>();
+
     public static void main(String[] args) {
         SpringApplication.run(TicketingApplication.class, args);
 
@@ -23,18 +26,17 @@ public class TicketingApplication {
 
         System.out.println("=== Ticketing System Configuration ===");
 
-        config.setTotalTickets(getValidatedInput(scanner, "Enter the total number of tickets: "));
-        config.setTicketReleaseRate(getValidatedInput(scanner, "Enter the ticket release rate (seconds): "));
-        config.setCustomerRetrievalRate(getValidatedInput(scanner, "Enter the customer retrieval rate (seconds): "));
-        config.setMaxTicketCapacity(getValidatedInput(scanner, "Enter the maximum ticket pool capacity: "));
-        config.setNumberOfVendors(getValidatedInput(scanner, "Enter the number of vendors: "));
+        config.setTotalTickets(getValidatedInput(scanner, "Enter total ticket number: "));
+        config.setMaxTicketCapacity(getValidatedInput(scanner, "Enter maximum ticket pool capacity: "));
+        config.setNumberOfVendors(getValidatedInput(scanner, "Enter number of vendors: "));
+        config.setTicketReleaseRate(getValidatedInput(scanner, "Enter ticket release rate: "));
 
         saveConfiguration(config);
 
         System.out.println("\nConfiguration complete. Starting the Ticketing System...\n");
 
         // Create a shared ticket pool
-        TicketPool ticketPool = new TicketPool(config.getTotalTickets(), config.getMaxTicketCapacity());
+        TicketPool ticketPool = new TicketPool(config.getTotalTickets(), config.getMaxTicketCapacity(), vendorReleases, customerPurchases);
 
         // Create vendor threads
         List<Thread> vendorThreads = new ArrayList<>();
@@ -45,16 +47,16 @@ public class TicketingApplication {
             vendorThread.start();
         }
 
-        // Create customer threads (equal to the total number of tickets)
+        // Create customer threads
         List<Thread> customerThreads = new ArrayList<>();
         for (int i = 1; i <= config.getTotalTickets(); i++) {
-            Customer customer = new Customer(ticketPool, config.getCustomerRetrievalRate(), i);
+            Customer customer = new Customer(ticketPool, i);
             Thread customerThread = new Thread(customer);
             customerThreads.add(customerThread);
             customerThread.start();
         }
 
-        // Join all threads
+        // Wait for all threads to complete
         try {
             for (Thread vendorThread : vendorThreads) {
                 vendorThread.join();
@@ -66,7 +68,38 @@ public class TicketingApplication {
             System.out.println("Main thread interrupted: " + e.getMessage());
         }
 
-        System.out.println("Ticketing System has completed execution. All tickets are sold.");
+        System.out.println("\nSystem terminated: All tickets are sold.\n");
+        displaySummary(scanner);
+    }
+
+    private static void displaySummary(Scanner scanner) {
+        System.out.println("===== Summary =====");
+        System.out.println("Total Tickets Sold: " + customerPurchases.size());
+        System.out.println("Total Customers Served: " + customerPurchases.size());
+        System.out.println("Times Ticket Pool Was Filled by Vendors: 0"); // Placeholder for now
+        System.out.println("===================");
+
+        while (true) {
+            System.out.println("\nAdditional Information");
+            System.out.println("1. View all tickets purchased");
+            System.out.println("2. View all tickets sold");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+
+            int choice = scanner.nextInt();
+            if (choice == 1) {
+                System.out.println("\n=== Tickets Purchased ===");
+                customerPurchases.forEach(System.out::println);
+            } else if (choice == 2) {
+                System.out.println("\n=== Tickets Sold by Vendors ===");
+                vendorReleases.forEach(System.out::println);
+            } else if (choice == 3) {
+                System.out.println("Exiting.");
+                break;
+            } else {
+                System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 
     private static int getValidatedInput(Scanner scanner, String prompt) {
