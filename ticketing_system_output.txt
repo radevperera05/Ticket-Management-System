@@ -423,3 +423,263 @@ Vendor-1 added: Ticket - ID: 003 | Tickets in pool now: 1
 
 Customer-1 removed: Ticket - ID: 003 | Tickets left in pool now: 0
 Customer-1 purchased: Ticket - ID: 003
+Vendor-1 added: Ticket - ID: 001 | Tickets in pool now: 1
+
+Customer-20 removed: Ticket - ID: 001 | Tickets left in pool now: 0
+Customer-20 purchased: Ticket - ID: 001
+Vendor-1 added: Ticket - ID: 002 | Tickets in pool now: 1
+
+Customer-19 removed: Ticket - ID: 002 | Tickets left in pool now: 0
+Customer-19 purchased: Ticket - ID: 002
+Vendor-1 added: Ticket - ID: 003 | Tickets in pool now: 1
+
+Customer-1 removed: Ticket - ID: 003 | Tickets left in pool now: 0
+Customer-1 purchased: Ticket - ID: 003
+Vendor-1 added: Ticket - ID: 004 | Tickets in pool now: 1
+
+Customer-18 removed: Ticket - ID: 004 | Tickets left in pool now: 0
+Customer-18 purchased: Ticket - ID: 004
+Vendor-1 added: Ticket - ID: 005 | Tickets in pool now: 1
+
+Customer-2 removed: Ticket - ID: 005 | Tickets left in pool now: 0
+Customer-2 purchased: Ticket - ID: 005
+Vendor-1 added: Ticket - ID: 006 | Tickets in pool now: 1
+
+Customer-17 removed: Ticket - ID: 006 | Tickets left in pool now: 0
+Customer-17 purchased: Ticket - ID: 006
+Vendor-1 added: Ticket - ID: 007 | Tickets in pool now: 1
+
+Customer-3 removed: Ticket - ID: 007 | Tickets left in pool now: 0
+Customer-3 purchased: Ticket - ID: 007
+Vendor-1 added: Ticket - ID: 008 | Tickets in pool now: 1
+
+Customer-16 removed: Ticket - ID: 008 | Tickets left in pool now: 0
+Customer-16 purchased: Ticket - ID: 008
+Vendor-1 added: Ticket - ID: 009 | Tickets in pool now: 1
+
+Customer-4 removed: Ticket - ID: 009 | Tickets left in pool now: 0
+Customer-4 purchased: Ticket - ID: 009
+Vendor-1 added: Ticket - ID: 010 | Tickets in pool now: 1
+
+Customer-15 removed: Ticket - ID: 010 | Tickets left in pool now: 0
+Customer-15 purchased: Ticket - ID: 010
+Vendor-1 added: Ticket - ID: 011 | Tickets in pool now: 1
+
+Customer-5 removed: Ticket - ID: 011 | Tickets left in pool now: 0
+Customer-5 purchased: Ticket - ID: 011
+Vendor-1 added: Ticket - ID: 012 | Tickets in pool now: 1
+
+Customer-14 removed: Ticket - ID: 012 | Tickets left in pool now: 0
+Customer-14 purchased: Ticket - ID: 012
+Vendor-1 added: Ticket - ID: 013 | Tickets in pool now: 1
+
+Customer-6 removed: Ticket - ID: 013 | Tickets left in pool now: 0
+Customer-6 purchased: Ticket - ID: 013
+Vendor-1 added: Ticket - ID: 014 | Tickets in pool now: 1
+
+Customer-13 removed: Ticket - ID: 014 | Tickets left in pool now: 0
+Customer-13 purchased: Ticket - ID: 014
+Vendor-1 added: Ticket - ID: 015 | Tickets in pool now: 1
+
+Customer-7 removed: Ticket - ID: 015 | Tickets left in pool now: 0
+Customer-7 purchased: Ticket - ID: 015
+Vendor-1 added: Ticket - ID: 016 | Tickets in pool now: 1
+
+Customer-12 removed: Ticket - ID: 016 | Tickets left in pool now: 0
+Customer-12 purchased: Ticket - ID: 016
+Vendor-1 added: Ticket - ID: 017 | Tickets in pool now: 1
+
+Customer-8 removed: Ticket - ID: 017 | Tickets left in pool now: 0
+Customer-8 purchased: Ticket - ID: 017
+Vendor-1 added: Ticket - ID: 018 | Tickets in pool now: 1
+
+Customer-11 removed: Ticket - ID: 018 | Tickets left in pool now: 0
+Customer-11 purchased: Ticket - ID: 018
+Vendor-1 added: Ticket - ID: 019 | Tickets in pool now: 1
+
+Customer-9 removed: Ticket - ID: 019 | Tickets left in pool now: 0
+Customer-9 purchased: Ticket - ID: 019
+Vendor-1 added: Ticket - ID: 020 | Tickets in pool now: 1
+
+Customer-10 removed: Ticket - ID: 020 | Tickets left in pool now: 0
+Customer-10 purchased: Ticket - ID: 020
+
+All tickets are sold. Vendor-1 is stopping.
+Vendor-1 added: Ticket - ID: 001 | Tickets in pool now: 1
+
+Customer-20 removed: Ticket - ID: 001 | Tickets left in pool now: 0
+Customer-20 purchased: Ticket - ID: 001
+Vendor-2 added: Ticket - ID: 002 | Tickets in pool now: 1
+
+Customer-19 removed: Ticket - ID: 002 | Tickets left in pool now: 0
+Customer-19 purchased: Ticket - ID: 002
+Vendor-1 added: Ticket - ID: 003 | Tickets in pool now: 1
+
+Customer-1 removed: Ticket - ID: 003 | Tickets left in pool now: 0
+Customer-1 purchased: Ticket - ID: 003
+Vendor-2 added: Ticket - ID: 004 | Tickets in pool now: 1
+
+Customer-18 removed: Ticket - ID: 004 | Tickets left in pool now: 0
+Customer-18 purchased: Ticket - ID: 004
+Vendor-1 added: Ticket - ID: 005 | Tickets in pool now: 1
+
+Customer-2 removed: Ticket - ID: 005 | Tickets left in pool now: 0
+Customer-2 purchased: Ticket - ID: 005
+Vendor-2 added: Ticket - ID: 006 | Tickets in pool now: 1
+
+Customer-17 removed: Ticket - ID: 006 | Tickets left in pool now: 0
+Customer-17 purchased: Ticket - ID: 006
+Vendor-1 added: Ticket - ID: 007 | Tickets in pool now: 1
+
+Customer-3 removed: Ticket - ID: 007 | Tickets left in pool now: 0
+Customer-3 purchased: Ticket - ID: 007
+Vendor-2 added: Ticket - ID: 008 | Tickets in pool now: 1
+
+Customer-16 removed: Ticket - ID: 008 | Tickets left in pool now: 0
+Customer-16 purchased: Ticket - ID: 008
+Vendor-1 added: Ticket - ID: 009 | Tickets in pool now: 1
+
+Customer-4 removed: Ticket - ID: 009 | Tickets left in pool now: 0
+Customer-4 purchased: Ticket - ID: 009
+Vendor-2 added: Ticket - ID: 010 | Tickets in pool now: 1
+
+Customer-15 removed: Ticket - ID: 010 | Tickets left in pool now: 0
+Customer-15 purchased: Ticket - ID: 010
+Vendor-1 added: Ticket - ID: 001 | Tickets in pool now: 1
+
+Customer-1 removed: Ticket - ID: 001 | Tickets left in pool now: 0
+Customer-1 purchased: Ticket - ID: 001
+
+All tickets are sold. Vendor-3 is stopping.
+
+All tickets are sold. Vendor-2 is stopping.
+
+All tickets are sold. Vendor-1 is stopping.
+Vendor-1 added: Ticket - ID: 001 | Tickets in pool now: 1
+Customer-20 removed: Ticket - ID: 001 | Tickets left in pool now: 0
+Customer-20 purchased: Ticket - ID: 001
+Vendor-20 added: Ticket - ID: 002 | Tickets in pool now: 1
+Vendor-19 added: Ticket - ID: 003 | Tickets in pool now: 2
+Vendor-18 added: Ticket - ID: 004 | Tickets in pool now: 3
+Vendor-17 added: Ticket - ID: 005 | Tickets in pool now: 4
+Vendor-16 added: Ticket - ID: 006 | Tickets in pool now: 5
+Vendor-11 added: Ticket - ID: 007 | Tickets in pool now: 6
+Vendor-14 added: Ticket - ID: 008 | Tickets in pool now: 7
+Vendor-15 added: Ticket - ID: 009 | Tickets in pool now: 8
+Vendor-12 added: Ticket - ID: 010 | Tickets in pool now: 9
+Vendor-13 added: Ticket - ID: 011 | Tickets in pool now: 10
+Customer-1 removed: Ticket - ID: 002 | Tickets left in pool now: 9
+Customer-1 purchased: Ticket - ID: 002
+Customer-2 removed: Ticket - ID: 003 | Tickets left in pool now: 8
+Customer-2 purchased: Ticket - ID: 003
+Customer-3 removed: Ticket - ID: 004 | Tickets left in pool now: 7
+Customer-3 purchased: Ticket - ID: 004
+Customer-4 removed: Ticket - ID: 005 | Tickets left in pool now: 6
+Customer-4 purchased: Ticket - ID: 005
+Customer-5 removed: Ticket - ID: 006 | Tickets left in pool now: 5
+Customer-5 purchased: Ticket - ID: 006
+Customer-6 removed: Ticket - ID: 007 | Tickets left in pool now: 4
+Customer-6 purchased: Ticket - ID: 007
+Customer-7 removed: Ticket - ID: 008 | Tickets left in pool now: 3
+Customer-7 purchased: Ticket - ID: 008
+Customer-8 removed: Ticket - ID: 009 | Tickets left in pool now: 2
+Customer-8 purchased: Ticket - ID: 009
+Customer-9 removed: Ticket - ID: 010 | Tickets left in pool now: 1
+Customer-9 purchased: Ticket - ID: 010
+Customer-10 removed: Ticket - ID: 011 | Tickets left in pool now: 0
+Customer-10 purchased: Ticket - ID: 011
+Vendor-2 added: Ticket - ID: 020 | Tickets in pool now: 1
+Vendor-3 added: Ticket - ID: 019 | Tickets in pool now: 2
+Vendor-6 added: Ticket - ID: 018 | Tickets in pool now: 3
+Vendor-5 added: Ticket - ID: 017 | Tickets in pool now: 4
+Vendor-4 added: Ticket - ID: 016 | Tickets in pool now: 5
+Vendor-7 added: Ticket - ID: 015 | Tickets in pool now: 6
+Vendor-8 added: Ticket - ID: 014 | Tickets in pool now: 7
+Vendor-9 added: Ticket - ID: 013 | Tickets in pool now: 8
+Vendor-10 added: Ticket - ID: 012 | Tickets in pool now: 9
+Customer-19 removed: Ticket - ID: 020 | Tickets left in pool now: 8
+Customer-19 purchased: Ticket - ID: 020
+Customer-16 removed: Ticket - ID: 019 | Tickets left in pool now: 7
+Customer-16 purchased: Ticket - ID: 019
+Customer-17 removed: Ticket - ID: 018 | Tickets left in pool now: 6
+Customer-17 purchased: Ticket - ID: 018
+Customer-18 removed: Ticket - ID: 017 | Tickets left in pool now: 5
+Customer-18 purchased: Ticket - ID: 017
+Customer-15 removed: Ticket - ID: 016 | Tickets left in pool now: 4
+Customer-15 purchased: Ticket - ID: 016
+Customer-14 removed: Ticket - ID: 015 | Tickets left in pool now: 3
+Customer-14 purchased: Ticket - ID: 015
+Customer-13 removed: Ticket - ID: 014 | Tickets left in pool now: 2
+Customer-13 purchased: Ticket - ID: 014
+Customer-12 removed: Ticket - ID: 013 | Tickets left in pool now: 1
+Customer-12 purchased: Ticket - ID: 013
+Customer-11 removed: Ticket - ID: 012 | Tickets left in pool now: 0
+Customer-11 purchased: Ticket - ID: 012
+All tickets are sold. Vendor-1 is stopping.
+All tickets are sold. Vendor-19 is stopping.
+All tickets are sold. Vendor-18 is stopping.
+All tickets are sold. Vendor-20 is stopping.
+All tickets are sold. Vendor-14 is stopping.
+All tickets are sold. Vendor-11 is stopping.
+All tickets are sold. Vendor-16 is stopping.
+All tickets are sold. Vendor-13 is stopping.
+All tickets are sold. Vendor-15 is stopping.
+All tickets are sold. Vendor-12 is stopping.
+All tickets are sold. Vendor-17 is stopping.
+All tickets are sold. Vendor-7 is stopping.
+All tickets are sold. Vendor-3 is stopping.
+All tickets are sold. Vendor-9 is stopping.
+All tickets are sold. Vendor-2 is stopping.
+All tickets are sold. Vendor-5 is stopping.
+All tickets are sold. Vendor-6 is stopping.
+All tickets are sold. Vendor-10 is stopping.
+All tickets are sold. Vendor-4 is stopping.
+All tickets are sold. Vendor-8 is stopping.
+Vendor-1 added: Ticket - ID: 001 | Tickets in pool now: 1
+Customer-12 removed: Ticket - ID: 001 | Tickets left in pool now: 0
+Customer-12 purchased: Ticket - ID: 001
+Vendor-12 added: Ticket - ID: 002 | Tickets in pool now: 1
+Vendor-11 added: Ticket - ID: 003 | Tickets in pool now: 2
+Vendor-10 added: Ticket - ID: 004 | Tickets in pool now: 3
+Vendor-9 added: Ticket - ID: 005 | Tickets in pool now: 4
+Customer-1 removed: Ticket - ID: 002 | Tickets left in pool now: 3
+Customer-1 purchased: Ticket - ID: 002
+Customer-2 removed: Ticket - ID: 003 | Tickets left in pool now: 2
+Customer-2 purchased: Ticket - ID: 003
+Customer-3 removed: Ticket - ID: 004 | Tickets left in pool now: 1
+Customer-3 purchased: Ticket - ID: 004
+Customer-4 removed: Ticket - ID: 005 | Tickets left in pool now: 0
+Customer-4 purchased: Ticket - ID: 005
+Vendor-5 added: Ticket - ID: 012 | Tickets in pool now: 1
+Vendor-6 added: Ticket - ID: 011 | Tickets in pool now: 2
+Vendor-4 added: Ticket - ID: 010 | Tickets in pool now: 3
+Vendor-2 added: Ticket - ID: 009 | Tickets in pool now: 4
+Customer-11 removed: Ticket - ID: 012 | Tickets left in pool now: 3
+Customer-11 purchased: Ticket - ID: 012
+Customer-10 removed: Ticket - ID: 011 | Tickets left in pool now: 2
+Customer-10 purchased: Ticket - ID: 011
+Customer-9 removed: Ticket - ID: 010 | Tickets left in pool now: 1
+Customer-9 purchased: Ticket - ID: 010
+Customer-8 removed: Ticket - ID: 009 | Tickets left in pool now: 0
+Customer-8 purchased: Ticket - ID: 009
+Vendor-8 added: Ticket - ID: 006 | Tickets in pool now: 1
+Vendor-7 added: Ticket - ID: 007 | Tickets in pool now: 2
+Vendor-3 added: Ticket - ID: 008 | Tickets in pool now: 3
+Customer-5 removed: Ticket - ID: 006 | Tickets left in pool now: 2
+Customer-5 purchased: Ticket - ID: 006
+Customer-6 removed: Ticket - ID: 007 | Tickets left in pool now: 1
+Customer-6 purchased: Ticket - ID: 007
+Customer-7 removed: Ticket - ID: 008 | Tickets left in pool now: 0
+Customer-7 purchased: Ticket - ID: 008
+All tickets are sold. Vendor-1 is stopping.
+All tickets are sold. Vendor-10 is stopping.
+All tickets are sold. Vendor-11 is stopping.
+All tickets are sold. Vendor-12 is stopping.
+All tickets are sold. Vendor-9 is stopping.
+All tickets are sold. Vendor-2 is stopping.
+All tickets are sold. Vendor-4 is stopping.
+All tickets are sold. Vendor-3 is stopping.
+All tickets are sold. Vendor-6 is stopping.
+All tickets are sold. Vendor-8 is stopping.
+All tickets are sold. Vendor-7 is stopping.
+All tickets are sold. Vendor-5 is stopping.

@@ -26,31 +26,31 @@ public class TicketingApplication {
 
         System.out.println("=== Ticketing System Configuration ===");
 
-        config.setTotalTickets(getValidatedInput(scanner, "Enter total ticket number: "));
-        config.setMaxTicketCapacity(getValidatedInput(scanner, "Enter maximum ticket pool capacity: "));
-        config.setNumberOfVendors(getValidatedInput(scanner, "Enter number of vendors: "));
-        config.setTicketReleaseRate(getValidatedInput(scanner, "Enter ticket release rate: "));
+        config.setTotalTickets(getValidatedInput(scanner, "Enter total ticket count (positive integer): "));
+        config.setTicketReleaseRate(getValidatedInput(scanner, "Enter ticket release rate (tickets/second, positive integer): "));
+        config.setCustomerRetrievalRate(getValidatedInput(scanner, "Enter customer retrieval rate (tickets/second, positive integer): "));
+        config.setMaxTicketCapacity(getValidatedInput(scanner, "Enter maximum ticket capacity (positive integer): "));
 
         saveConfiguration(config);
 
         System.out.println("\nConfiguration complete. Starting the Ticketing System...\n");
 
-        // Create a shared ticket pool
+        // Shared ticket pool
         TicketPool ticketPool = new TicketPool(config.getTotalTickets(), config.getMaxTicketCapacity(), vendorReleases, customerPurchases);
 
-        // Create vendor threads
+        // Vendor threads
         List<Thread> vendorThreads = new ArrayList<>();
-        for (int i = 1; i <= config.getNumberOfVendors(); i++) {
+        for (int i = 1; i <= config.getTotalTickets(); i++) {
             Vendor vendor = new Vendor(ticketPool, i, config.getTicketReleaseRate());
             Thread vendorThread = new Thread(vendor);
             vendorThreads.add(vendorThread);
             vendorThread.start();
         }
 
-        // Create customer threads
+        // Customer threads
         List<Thread> customerThreads = new ArrayList<>();
         for (int i = 1; i <= config.getTotalTickets(); i++) {
-            Customer customer = new Customer(ticketPool, i);
+            Customer customer = new Customer(ticketPool, config.getCustomerRetrievalRate(), i);
             Thread customerThread = new Thread(customer);
             customerThreads.add(customerThread);
             customerThread.start();

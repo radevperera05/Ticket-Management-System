@@ -6,10 +6,10 @@ import java.util.List;
 
 public class TicketPool {
     private final List<String> tickets = Collections.synchronizedList(new LinkedList<>());
-    private int totalTickets; // Total tickets available for release
-    private final int maxCapacity; // Maximum ticket pool capacity
-    private final List<String> vendorReleases; // Tracks tickets released by vendors
-    private final List<String> customerPurchases; // Tracks tickets purchased by customers
+    private int totalTickets;
+    private final int maxCapacity;
+    private final List<String> vendorReleases;
+    private final List<String> customerPurchases;
 
     public TicketPool(int totalTickets, int maxCapacity, List<String> vendorReleases, List<String> customerPurchases) {
         this.totalTickets = totalTickets;
@@ -21,21 +21,21 @@ public class TicketPool {
     public synchronized void addTickets(List<String> newTickets, String vendorId) {
         while (tickets.size() >= maxCapacity) {
             try {
-                wait(); // Wait until space is available in the pool
+                wait();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
         tickets.addAll(newTickets);
-        newTickets.forEach(ticket -> vendorReleases.add("\nVendor-" + vendorId + " added: " + ticket));
-        Logger.log("Vendor-" + vendorId + " added: " + newTickets.get(0) + " | Tickets in pool now: " + tickets.size() + "\n");
-        notifyAll(); // Notify waiting threads
+        newTickets.forEach(ticket -> vendorReleases.add("Vendor-" + vendorId + " added: " + ticket));
+        Logger.log("Vendor-" + vendorId + " added: " + newTickets.get(0) + " | Tickets in pool now: " + tickets.size());
+        notifyAll();
     }
 
     public synchronized String removeTicket(String customerId) {
         while (tickets.isEmpty() && totalTickets > 0) {
             try {
-                wait(); // Wait until a ticket is available
+                wait();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -44,14 +44,10 @@ public class TicketPool {
             String ticket = tickets.remove(0);
             customerPurchases.add("Customer-" + customerId + " purchased: " + ticket);
             Logger.log("Customer-" + customerId + " removed: " + ticket + " | Tickets left in pool now: " + tickets.size());
-            notifyAll(); // Notify waiting threads
+            notifyAll();
             return ticket;
         }
         return null;
-    }
-
-    public synchronized int getRemainingTicketsToRelease() {
-        return totalTickets;
     }
 
     public synchronized boolean allTicketsSold() {

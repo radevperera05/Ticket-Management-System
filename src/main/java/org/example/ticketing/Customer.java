@@ -2,10 +2,12 @@ package org.example.ticketing;
 
 public class Customer implements Runnable {
     private final TicketPool ticketPool;
+    private final int retrievalInterval; // Customer retrieval rate (in seconds)
     private final int customerId;
 
-    public Customer(TicketPool ticketPool, int customerId) {
+    public Customer(TicketPool ticketPool, int retrievalInterval, int customerId) {
         this.ticketPool = ticketPool;
+        this.retrievalInterval = retrievalInterval;
         this.customerId = customerId;
     }
 
@@ -28,7 +30,7 @@ public class Customer implements Runnable {
                     }
                 }
             }
-            Thread.sleep(1000L); // Simulate customer retrieval interval
+            Thread.sleep(retrievalInterval * 1000L); // Simulate customer retrieval interval (in seconds)
         } catch (InterruptedException e) {
             Logger.log("Customer-" + customerId + " interrupted.");
         }

@@ -11,9 +11,10 @@ public class Logger {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(LOG_FILE, true))) {
             writer.write(message);
             writer.newLine();
+            writer.flush();
         } catch (IOException e) {
             System.err.println("Failed to write to log file: " + e.getMessage());
         }
-        System.out.println(message); // Optional: Print to console
+        System.out.println(message);
     }
 }
